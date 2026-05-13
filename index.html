@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>محمصة زين - ملك التسالي</title>
     <style>
-        /* هوية أشرف التقنية - ملكي ليموني */
         body {
             background-color: #000000;
             color: #ffffff;
@@ -23,11 +22,10 @@
             background-color: #050505;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 0 20px rgba(204, 255, 0, 0.1);
         }
 
         header {
-            padding: 35px 10px;
+            padding: 40px 10px;
             text-align: center;
             border-bottom: 2px dashed #ccff00;
         }
@@ -37,13 +35,13 @@
             font-weight: bold;
             color: #ccff00;
             margin: 0;
-            letter-spacing: 2px;
         }
 
-        .welcome-msg {
-            font-size: 16px;
+        .welcome-tag {
             color: #888;
+            font-size: 16px;
             margin-top: 10px;
+            letter-spacing: 1px;
         }
 
         .items-container {
@@ -56,40 +54,33 @@
         .item-card {
             border: 1px solid #222;
             border-radius: 15px;
-            padding: 15px;
+            padding: 20px 10px;
             text-align: center;
             background-color: #0a0a0a;
-            transition: 0.3s;
+            transition: 0.3s ease-in-out;
         }
 
         .item-card:hover {
             border-color: #ccff00;
-            transform: scale(1.02);
+            background-color: #0f0f0f;
         }
 
-        .price-tag {
-            display: block;
-            color: #ccff00;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 10px 0;
+        h3 {
+            margin: 0 0 15px 0;
+            font-size: 20px;
+            color: #ffffff;
         }
 
         .order-btn {
             background-color: #ccff00;
             color: #000;
             border: none;
-            padding: 14px;
-            border-radius: 12px;
+            padding: 12px;
+            border-radius: 10px;
             width: 100%;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .order-btn:active {
-            transform: scale(0.95);
         }
 
         footer {
@@ -97,7 +88,7 @@
             text-align: center;
             padding: 25px;
             font-size: 14px;
-            color: #555;
+            color: #444;
             border-top: 1px solid #111;
         }
     </style>
@@ -107,49 +98,54 @@
 <div class="main-wrapper">
     <header>
         <h1 class="logo-text">محمصة زين</h1>
-        <div class="welcome-msg">أجود أنواع اللب والسوداني والمكسرات</div>
+        <div class="welcome-tag">تسالي طازجة.. اطلب واعرف السعر فوراً</div>
     </header>
 
     <div class="items-container">
         <div class="item-card">
             <h3>لب سوبر</h3>
-            <span class="price-tag">40 ج.م</span>
-            <button class="order-btn" onclick="sendOrder('لب سوبر')">اطلب الآن</button>
+            <button class="order-btn" onclick="askPrice('لب سوبر')">طلب وسعر</button>
         </div>
 
         <div class="item-card">
             <h3>سوداني فاخر</h3>
-            <span class="price-tag">30 ج.م</span>
-            <button class="order-btn" onclick="sendOrder('سوداني بقشره')">اطلب الآن</button>
+            <button class="order-btn" onclick="askPrice('سوداني بقشره')">طلب وسعر</button>
         </div>
 
         <div class="item-card">
             <h3>لب عباد</h3>
-            <span class="price-tag">25 ج.م</span>
-            <button class="order-btn" onclick="sendOrder('لب عباد')">اطلب الآن</button>
+            <button class="order-btn" onclick="askPrice('لب عباد')">طلب وسعر</button>
         </div>
 
         <div class="item-card">
             <h3>ميكس تسالي</h3>
-            <span class="price-tag">35 ج.م</span>
-            <button class="order-btn" onclick="sendOrder('ميكس مقرمشات')">اطلب الآن</button>
+            <button class="order-btn" onclick="askPrice('ميكس مقرمشات')">طلب وسعر</button>
+        </div>
+        
+        <div class="item-card">
+            <h3>فستق ولوز</h3>
+            <button class="order-btn" onclick="askPrice('مكسرات فاخرة')">طلب وسعر</button>
+        </div>
+
+        <div class="item-card">
+            <h3>حب رمان</h3>
+            <button class="order-btn" onclick="askPrice('لب خشب رمان')">طلب وسعر</button>
         </div>
     </div>
 
     <footer>
-        بكل حب لأخي.. تم التطوير بواسطة أشرف حسن (Creative 2026)
+        هدية من أشرف حسن (Creative 2026) لأخيه الغالي
     </footer>
 </div>
 
 <script>
-    function sendOrder(itemName) {
+    function askPrice(itemName) {
         const phone = "201111210119"; 
-        const message = "السلام عليكم يا محمصة زين.. أريد طلب " + itemName + " من خلال موقعكم.";
+        const message = "السلام عليكم يا محمصة زين.. من فضلك أريد معرفة سعر طلب " + itemName + " المتاح حالياً.";
         const whatsappUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
         window.location.href = whatsappUrl;
     }
 </script>
 
 </body>
-  </html>
-  
+</html>
