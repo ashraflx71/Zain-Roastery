@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>محمصة زين - ملك التسالي</title>
     <style>
+        /* تصميم أشرف حسن - ملكي ليموني */
         body {
             background-color: #000000;
             color: #ffffff;
@@ -16,36 +17,37 @@
 
         .main-wrapper {
             border: 3px solid #ccff00;
-            margin: 10px;
+            margin: 15px;
             border-radius: 25px;
-            min-height: 95vh;
+            min-height: 94vh;
             background-color: #050505;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 0 25px rgba(204, 255, 0, 0.15);
         }
 
         header {
-            padding: 40px 10px;
+            padding: 45px 15px;
             text-align: center;
             border-bottom: 2px dashed #ccff00;
         }
 
         .logo-text {
-            font-size: 50px;
+            font-size: 55px;
             font-weight: bold;
             color: #ccff00;
             margin: 0;
+            text-shadow: 0 0 15px rgba(204, 255, 0, 0.2);
         }
 
-        .welcome-tag {
+        .tagline {
+            font-size: 18px;
             color: #888;
-            font-size: 16px;
-            margin-top: 10px;
-            letter-spacing: 1px;
+            margin-top: 12px;
         }
 
-        .items-container {
-            padding: 20px;
+        .items-grid {
+            padding: 25px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
@@ -53,16 +55,16 @@
 
         .item-card {
             border: 1px solid #222;
-            border-radius: 15px;
+            border-radius: 18px;
             padding: 20px 10px;
             text-align: center;
             background-color: #0a0a0a;
-            transition: 0.3s ease-in-out;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .item-card:hover {
             border-color: #ccff00;
-            background-color: #0f0f0f;
+            transform: scale(1.05);
         }
 
         h3 {
@@ -75,12 +77,18 @@
             background-color: #ccff00;
             color: #000;
             border: none;
-            padding: 12px;
-            border-radius: 10px;
+            padding: 14px;
+            border-radius: 12px;
             width: 100%;
             font-weight: bold;
             font-size: 16px;
             cursor: pointer;
+        }
+
+        .special-item {
+            border: 2px solid #ccff00 !important;
+            grid-column: span 2; /* تأخذ العرض بالكامل لتمييزها */
+            background: linear-gradient(to bottom, #0a0a0a, #1a1a00);
         }
 
         footer {
@@ -98,43 +106,39 @@
 <div class="main-wrapper">
     <header>
         <h1 class="logo-text">محمصة زين</h1>
-        <div class="welcome-tag">تسالي طازجة.. اطلب واعرف السعر فوراً</div>
+        <div class="tagline">تسالي طازجة | اطلب واعرف السعر فوراً</div>
     </header>
 
-    <div class="items-container">
+    <div class="items-grid">
+        <!-- صنف مميز: لب خشب -->
+        <div class="item-card special-item">
+            <h3 style="color: #ccff00; font-size: 24px;">🌟 لب خشب (رمان) 🌟</h3>
+            <button class="order-btn" onclick="askPrice('لب خشب رمان المميز')">اطلب النوادر</button>
+        </div>
+
         <div class="item-card">
             <h3>لب سوبر</h3>
             <button class="order-btn" onclick="askPrice('لب سوبر')">طلب وسعر</button>
         </div>
 
         <div class="item-card">
-            <h3>سوداني فاخر</h3>
+            <h3>سوداني بقشره</h3>
             <button class="order-btn" onclick="askPrice('سوداني بقشره')">طلب وسعر</button>
         </div>
 
         <div class="item-card">
-            <h3>لب عباد</h3>
-            <button class="order-btn" onclick="askPrice('لب عباد')">طلب وسعر</button>
+            <h3>لب عباد سوري</h3>
+            <button class="order-btn" onclick="askPrice('لب عباد سوري')">طلب وسعر</button>
         </div>
 
         <div class="item-card">
-            <h3>ميكس تسالي</h3>
+            <h3>ميكس مقرمشات</h3>
             <button class="order-btn" onclick="askPrice('ميكس مقرمشات')">طلب وسعر</button>
-        </div>
-        
-        <div class="item-card">
-            <h3>فستق ولوز</h3>
-            <button class="order-btn" onclick="askPrice('مكسرات فاخرة')">طلب وسعر</button>
-        </div>
-
-        <div class="item-card">
-            <h3>حب رمان</h3>
-            <button class="order-btn" onclick="askPrice('لب خشب رمان')">طلب وسعر</button>
         </div>
     </div>
 
     <footer>
-        هدية من أشرف حسن (Creative 2026) لأخيه الغالي
+        بكل حب لأخي.. تم التطوير بواسطة أشرف حسن (Creative 2026)
     </footer>
 </div>
 
