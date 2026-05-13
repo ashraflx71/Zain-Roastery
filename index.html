@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمصة زين - ملك التسالي</title>
+    <style>
+        /* هوية أشرف التقنية - ملكي ليموني */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            font-size: 22px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-wrapper {
+            border: 3px solid #ccff00;
+            margin: 10px;
+            border-radius: 25px;
+            min-height: 95vh;
+            background-color: #050505;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.1);
+        }
+
+        header {
+            padding: 35px 10px;
+            text-align: center;
+            border-bottom: 2px dashed #ccff00;
+        }
+
+        .logo-text {
+            font-size: 50px;
+            font-weight: bold;
+            color: #ccff00;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .welcome-msg {
+            font-size: 16px;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .items-container {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .item-card {
+            border: 1px solid #222;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            background-color: #0a0a0a;
+            transition: 0.3s;
+        }
+
+        .item-card:hover {
+            border-color: #ccff00;
+            transform: scale(1.02);
+        }
+
+        .price-tag {
+            display: block;
+            color: #ccff00;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .order-btn {
+            background-color: #ccff00;
+            color: #000;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            width: 100%;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .order-btn:active {
+            transform: scale(0.95);
+        }
+
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+            color: #555;
+            border-top: 1px solid #111;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <header>
+        <h1 class="logo-text">محمصة زين</h1>
+        <div class="welcome-msg">أجود أنواع اللب والسوداني والمكسرات</div>
+    </header>
+
+    <div class="items-container">
+        <div class="item-card">
+            <h3>لب سوبر</h3>
+            <span class="price-tag">40 ج.م</span>
+            <button class="order-btn" onclick="sendOrder('لب سوبر')">اطلب الآن</button>
+        </div>
+
+        <div class="item-card">
+            <h3>سوداني فاخر</h3>
+            <span class="price-tag">30 ج.م</span>
+            <button class="order-btn" onclick="sendOrder('سوداني بقشره')">اطلب الآن</button>
+        </div>
+
+        <div class="item-card">
+            <h3>لب عباد</h3>
+            <span class="price-tag">25 ج.م</span>
+            <button class="order-btn" onclick="sendOrder('لب عباد')">اطلب الآن</button>
+        </div>
+
+        <div class="item-card">
+            <h3>ميكس تسالي</h3>
+            <span class="price-tag">35 ج.م</span>
+            <button class="order-btn" onclick="sendOrder('ميكس مقرمشات')">اطلب الآن</button>
+        </div>
+    </div>
+
+    <footer>
+        بكل حب لأخي.. تم التطوير بواسطة أشرف حسن (Creative 2026)
+    </footer>
+</div>
+
+<script>
+    function sendOrder(itemName) {
+        const phone = "201111210119"; 
+        const message = "السلام عليكم يا محمصة زين.. أريد طلب " + itemName + " من خلال موقعكم.";
+        const whatsappUrl = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+        window.location.href = whatsappUrl;
+    }
+</script>
+
+</body>
+  </html>
+  
